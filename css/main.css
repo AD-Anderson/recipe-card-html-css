@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.container {
+  max-width: 600px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container */
+  padding: 0 15px; /* Add some padding for better layout on small screens */
+}
+
 body {
   font-family: "Outfit", sans-serif;
 }
@@ -36,6 +42,7 @@ p {
   padding: 30px;
   background: #fff5fa;
   border-radius: 20px;
+  line-height: 2;
 }
 
 h3 {
@@ -45,6 +52,7 @@ h3 {
 h2 {
   color: #854632;
   font-family: "Young Serif", serif;
+  padding-bottom: 10px;
 }
 
 hr {
@@ -52,20 +60,31 @@ hr {
   margin: 20px auto;
 }
 
-.ingredients-section h2 {
-  padding-top: 10px;
-  padding-bottom: 15px;
+ol {
+  counter-reset: li;
+}
+
+ol li::before {
+  content: counter(li);
+  color: #854632;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+ol li {
+  counter-increment: li;
 }
 
 .ingredients-section {
   padding: 30px;
-  line-height: 25px;
+  line-height: 30px;
   color: #5f574e;
 }
 
 .instructions-section {
   padding: 30px;
-  line-height: 36px;
+  line-height: 30px;
   color: #5f574e;
 }
 
@@ -73,20 +92,21 @@ hr {
   margin: 0 auto;
 }
 
-.nutrition-section h2 {
-  padding: 10px;
-}
-
 .nutrition-section span {
   color: #854632;
 }
 
-.content-wrapper table td {
-  padding-right: 20px;
-  padding-left: 20px;
-  line-height: 36px;
+table {
+  width: 100%;
+  border-collapse: collapse; /* Ensures borders don't have extra space */
 }
 
 td {
-  border-bottom: 1px solid grey;
+  padding: 10px 15px; /* Adjusts the padding for space around the text */
+  border-bottom: 1px solid #ddd; /* Adds a line underneath each item */
+  text-align: center; /* Centers the text horizontally */
+}
+
+tr:last-child td {
+  border-bottom: none; /* Removes the border from the last row */
 }
